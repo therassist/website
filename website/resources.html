@@ -34,19 +34,19 @@
     <header>
         <div class="container">
             <nav>
-                <a href="index.html" class="logo">
+                <a class='logo' href='/'>
                     <svg viewBox="0 0 24 24" role="img" aria-label="Therassist.AI - Quality infrastructure for psychotherapy">
                         <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
                     </svg>
                     Therassist.AI
                 </a>
                 <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="product.html">Product</a></li>
-                    <li><a href="pricing.html">Pricing</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="resources.html" class="active">Resources</a></li>
-                    <li><a href="contact.html" class="btn btn-primary btn-sm">Get Started</a></li>
+                    <li><a href='/'>Home</a></li>
+                    <li><a href='/product'>Product</a></li>
+                    <li><a href='/pricing'>Pricing</a></li>
+                    <li><a href='/about'>About Us</a></li>
+                    <li><a class='active' href='/resources'>Resources</a></li>
+                    <li><a class='btn btn-primary btn-sm' href='/contact'>Get Started</a></li>
                 </ul>
                 <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
                     <span></span>
@@ -173,58 +173,51 @@
 
             <div class="faq-list">
                 <div class="faq-item">
-                    <button class="faq-question">What is the URL of the Therassist application?</button>
-                    <div class="faq-answer">
-                        <p>Access the Therassist application at <a href="https://app.therassist.ai/dashboard" style="color: var(--primary-green);">https://app.therassist.ai/dashboard</a></p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
                     <button class="faq-question">How long after I end a session will it take to see the note?</button>
                     <div class="faq-answer">
-                        <p>It's variable but usually between 20 to 60 minutes. The time depends on Zoom's processing of the cloud recording and transcript.</p>
+                        <p>If you use the zoom recording, usually within 20 minutes and sometimes up to 60 minutes. If you use the in-app transcribe feature, usually nearly immediately after your session.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
-                    <button class="faq-question">What happens to the cloud recording in Zoom?</button>
+                    <button class="faq-question">What happens to the recording in Zoom?</button>
                     <div class="faq-answer">
-                        <p>Cloud recordings in Zoom are deleted within 24 hours of being created. In the future, recordings will be deleted as soon as Therassist receives the transcript from Zoom.</p>
+                        <p>For the in-app transcribe feature, the recording is deleted immediately after the session is transcribed. For zoom it is based on your configurations and up to each practice. We recommend deleting recordings with 24 hours or sooner.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
-                    <button class="faq-question">What happens to the transcript data?</button>
+                    <button class="faq-question">Do you store any patient data?</button>
                     <div class="faq-answer">
-                        <p>The transcript in Therassist is deleted when you mark "finish and delete" after moving the note to your EHR. If not manually deleted, it will automatically be deleted within 72 hours.</p>
+                        <p>We do not store any patient identifying clinical data. We do store anonymized transcripts to help improve our services.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <button class="faq-question">Is Therassist HIPAA compliant?</button>
                     <div class="faq-answer">
-                        <p>Yes. Therassist is fully HIPAA compliant. We offer Business Associate Agreements (BAAs) to all customers. All data is segregated by practice and is never used to train AI models. Data is encrypted in transit and at rest. We use secure authentication, audit logs, monitoring, and other best practices to ensure data privacy and security.</p>
+                        <p>Yes. Therassist is fully HIPAA compliant. We offer Business Associate Agreements (BAAs) to all customers. We do not store any identifiable patient data. We do store anonymized transcripts (with all personal health information removed) to improve our AI models and services. All data is encrypted in transit and at rest. We use secure authentication, audit logs, monitoring, and other best practices to ensure data privacy and security.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <button class="faq-question">Can I use Therassist for intake notes?</button>
                     <div class="faq-answer">
-                        <p>Yes! Make sure you have client consent. Use the Intake Note template available in Pro and Clinic plans.</p>
+                        <p>Yes! Use the Intake Note template available in Pro and Clinic plans.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <button class="faq-question">Can I use Therassist for in-person sessions?</button>
                     <div class="faq-answer">
-                        <p>Yes. For in-person sessions, you'll need to start a Zoom session and enable cloud recording on a device in the room. In the future, Therassist will support in-person sessions without requiring Zoom.</p>
+                        <p>Yes. You can use the in app transcribe feature or Zoom in person.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <button class="faq-question">What therapeutic modalities does Therassist support?</button>
                     <div class="faq-answer">
-                        <p>Therassist includes specialized templates and intervention recognition for CBT (Cognitive Behavioral Therapy), DBT (Dialectical Behavior Therapy), ACT (Acceptance and Commitment Therapy), and general psychotherapy. We're continuously adding support for additional modalities.</p>
+                        <p>CBT, DBT, ACT, Interpersonal Therapy and other evidence-based therapies.</p>
                     </div>
                 </div>
 
@@ -318,7 +311,7 @@
             <h2>Still Have Questions?</h2>
             <p>Our team is here to help you succeed with Therassist.</p>
             <div class="cta-buttons">
-                <a href="contact.html" class="btn btn-white btn-lg">Contact Us</a>
+                <a class='btn btn-white btn-lg' href='/contact'>Contact Us</a>
                 <a href="mailto:support@therassist.ai" class="btn btn-secondary btn-lg" style="border-color: white; color: white;">Email Support</a>
             </div>
         </div>
@@ -343,34 +336,34 @@
                 <div class="footer-column">
                     <h4>Product</h4>
                     <ul>
-                        <li><a href="product.html">Features</a></li>
-                        <li><a href="pricing.html">Pricing</a></li>
-                        <li><a href="product.html#security">Security</a></li>
+                        <li><a href='/product'>Features</a></li>
+                        <li><a href='/pricing'>Pricing</a></li>
+                        <li><a href='/product#security'>Security</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h4>Company</h4>
                     <ul>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="about.html#team">Team</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href='/about'>About Us</a></li>
+                        <li><a href='/about#team'>Team</a></li>
+                        <li><a href='/contact'>Contact</a></li>
+                        <li><a href='/resources'>Resources</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h4>Support</h4>
                     <ul>
-                        <li><a href="resources.html#faq">FAQ</a></li>
-                        <li><a href="resources.html">Documentation</a></li>
+                        <li><a href='/resources#faq'>FAQ</a></li>
+                        <li><a href='/resources'>Documentation</a></li>
                         <li><a href="mailto:support@therassist.ai">Email Support</a></li>
-                        <li><a href="contact.html">Schedule Demo</a></li>
+                        <li><a href='/contact'>Schedule Demo</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2025 Therassist, Inc. All rights reserved.</p>
                 <div class="footer-links">
-                    <a href="privacy.html">Privacy Policy</a>
+                    <a href='/privacy'>Privacy Policy</a>
                     <a href="terms.html">Terms of Service</a>
                     <a href="baa.html">BAA</a>
                 </div>
