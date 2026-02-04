@@ -1420,3 +1420,121 @@ footer {
 
 .hidden { display: none; }
 .visible { display: block; }
+
+/* ============================================
+   Demo & Contact CTA Styles
+   ============================================ */
+
+/* Outline Button Style */
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--primary-green);
+    color: var(--primary-green);
+}
+
+.btn-outline:hover {
+    background: var(--primary-green);
+    color: white;
+}
+
+/* Plan Help Link (Pricing Page) */
+.plan-help-link {
+    text-align: center;
+    margin-top: 12px;
+    font-size: 0.875rem;
+}
+
+.plan-help-link a {
+    color: var(--primary-green);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.plan-help-link a:hover {
+    text-decoration: underline;
+}
+
+/* Plan CTA Secondary Button */
+.plan-cta-secondary {
+    background: transparent;
+    border: 2px solid var(--primary-green);
+    color: var(--primary-green);
+}
+
+.plan-cta-secondary:hover {
+    background: var(--primary-green);
+    color: white;
+}
+
+/* Contact Options Grid */
+.contact-options-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.contact-option-card {
+    background: var(--bg-white);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    padding: 40px 32px;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.contact-option-card:hover {
+    border-color: var(--primary-green);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-4px);
+}
+
+.contact-option-card.featured {
+    border: 2px solid var(--primary-green);
+    background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%);
+}
+
+.contact-option-icon {
+    width: 64px;
+    height: 64px;
+    background: var(--primary-green);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+}
+
+.contact-option-icon svg {
+    width: 32px;
+    height: 32px;
+    fill: white;
+}
+
+.contact-option-card h3 {
+    font-size: 1.25rem;
+    color: var(--dark-green);
+    margin-bottom: 12px;
+}
+
+.contact-option-card p {
+    color: var(--text-medium);
+    margin-bottom: 24px;
+    font-size: 0.9375rem;
+}
+
+.contact-option-card .btn {
+    width: 100%;
+}
+
+/* Responsive Contact Options */
+@media (max-width: 768px) {
+    .contact-options-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-option-card {
+        padding: 32px 24px;
+    }
+}

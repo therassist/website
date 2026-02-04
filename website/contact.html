@@ -46,6 +46,7 @@
                     <li><a href="pricing.html">Pricing</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="resources.html">Resources</a></li>
+                    <li><a href="https://calendly.com/therai" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">Request Demo</a></li>
                     <li><a href="contact.html" class="btn btn-primary btn-sm active">Get Started</a></li>
                 </ul>
                 <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
@@ -65,145 +66,56 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact Options Section -->
     <section class="contact-section section">
         <div class="container">
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <h3>Get in Touch</h3>
-                    <p style="margin-bottom: 32px;">Whether you're ready to start your free trial or just want to learn more, we'd love to hear from you.</p>
-
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                        </div>
-                        <div>
-                            <h4>Email</h4>
-                            <p><a href="mailto:hello@therassist.ai" style="color: var(--primary-green);">hello@therassist.ai</a></p>
-                        </div>
+            <div class="contact-options-grid">
+                <!-- Start Free Trial -->
+                <div class="contact-option-card">
+                    <div class="contact-option-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
                     </div>
-
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
-                        </div>
-                        <div>
-                            <h4>Response Time</h4>
-                            <p>We typically respond within 24 hours</p>
-                        </div>
-                    </div>
-
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                        </div>
-                        <div>
-                            <h4>Free Trial</h4>
-                            <p>5 free sessions with full access, no credit card required</p>
-                        </div>
-                    </div>
-
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
-                        </div>
-                        <div>
-                            <h4>HIPAA Compliant</h4>
-                            <p>BAA available for all customers</p>
-                        </div>
-                    </div>
-
-                    <div style="margin-top: 40px; padding: 24px; background: var(--bg-light); border-radius: var(--radius-md);">
-                        <h4 style="margin-bottom: 12px;">For Clinic & Enterprise</h4>
-                        <p style="margin-bottom: 16px;">Interested in implementing Therassist across your practice? Schedule a call with our team to discuss volume pricing and custom solutions.</p>
-                        <a href="mailto:sales@therassist.ai" class="btn btn-secondary">Contact Sales</a>
-                    </div>
+                    <h3>Start Free Trial</h3>
+                    <p>Get instant access with 5 free sessions. No credit card required.</p>
+                    <a href="pricing.html" class="btn btn-primary">Choose Your Plan</a>
                 </div>
 
-                <div class="contact-form">
-                    <h3 style="margin-bottom: 24px;">Start Your Free Trial</h3>
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Full Name *</label>
-                            <input type="text" id="name" name="name" required placeholder="Dr. Jane Smith">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="email">Work Email *</label>
-                            <input type="email" id="email" name="email" required placeholder="jane@practice.com">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="practice">Practice Name</label>
-                            <input type="text" id="practice" name="practice" placeholder="Seattle Therapy Associates">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="role">Your Role *</label>
-                            <select id="role" name="role" required>
-                                <option value="">Select your role</option>
-                                <option value="therapist">Individual Therapist</option>
-                                <option value="practice-owner">Practice Owner</option>
-                                <option value="clinical-director">Clinical Director</option>
-                                <option value="admin">Practice Administrator</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="size">Practice Size *</label>
-                            <select id="size" name="size" required>
-                                <option value="">Select practice size</option>
-                                <option value="solo">Solo Practice (1 clinician)</option>
-                                <option value="small">Small Practice (2-5 clinicians)</option>
-                                <option value="medium">Medium Practice (6-15 clinicians)</option>
-                                <option value="large">Large Practice (16-50 clinicians)</option>
-                                <option value="enterprise">Enterprise (50+ clinicians)</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="interest">I'm interested in *</label>
-                            <select id="interest" name="interest" required>
-                                <option value="">Select your interest</option>
-                                <option value="trial">Starting a free trial</option>
-                                <option value="demo">Scheduling a demo</option>
-                                <option value="pricing">Learning about pricing</option>
-                                <option value="enterprise">Enterprise/Clinic solutions</option>
-                                <option value="question">General question</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="modality">Primary Therapeutic Modality</label>
-                            <select id="modality" name="modality">
-                                <option value="">Select modality (optional)</option>
-                                <option value="cbt">CBT (Cognitive Behavioral Therapy)</option>
-                                <option value="dbt">DBT (Dialectical Behavior Therapy)</option>
-                                <option value="act">ACT (Acceptance and Commitment Therapy)</option>
-                                <option value="psychodynamic">Psychodynamic</option>
-                                <option value="integrative">Integrative/Eclectic</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="message">Additional Information</label>
-                            <textarea id="message" name="message" placeholder="Tell us about your practice and what you're looking to achieve..."></textarea>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">Get Started</button>
-
-                        <p style="font-size: 0.875rem; color: var(--text-light); margin-top: 16px; text-align: center;">
-                            By submitting this form, you agree to our <a href="privacy.html" style="color: var(--primary-green);">Privacy Policy</a>.
-                        </p>
-                    </form>
+                <!-- See a Demo -->
+                <div class="contact-option-card featured">
+                    <div class="contact-option-icon">
+                        <svg viewBox="0 0 24 24"><path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/></svg>
+                    </div>
+                    <h3>See a Demo</h3>
+                    <p>Schedule a personalized walkthrough with our team.</p>
+                    <a href="https://calendly.com/therai" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Schedule Demo</a>
                 </div>
+
+                <!-- Enterprise & Partnerships -->
+                <div class="contact-option-card">
+                    <div class="contact-option-icon">
+                        <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+                    </div>
+                    <h3>Enterprise & Partnerships</h3>
+                    <p>Volume pricing, custom integrations, and partnership opportunities.</p>
+                    <a href="mailto:partnerships@therassist.ai" class="btn btn-secondary">Contact Us</a>
+                </div>
+
+                <!-- Founding Partner Program -->
+                <div class="contact-option-card">
+                    <div class="contact-option-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    </div>
+                    <h3>Founding Partner Program</h3>
+                    <p>Help validate our DBT adherence scoring and shape product development.</p>
+                    <a href="mailto:founders@therassist.ai" class="btn btn-secondary">Learn More</a>
+                </div>
+            </div>
+
+            <!-- Contact Info -->
+            <div style="text-align: center; margin-top: 60px; padding-top: 40px; border-top: 1px solid var(--border-light);">
+                <h3 style="margin-bottom: 16px;">Have a Question?</h3>
+                <p style="color: var(--text-light); margin-bottom: 24px;">Our team typically responds within 24 hours.</p>
+                <a href="mailto:hello@therassist.ai" style="color: var(--primary-green); font-weight: 600; font-size: 1.125rem;">hello@therassist.ai</a>
             </div>
         </div>
     </section>
