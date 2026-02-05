@@ -1538,3 +1538,60 @@ footer {
         padding: 32px 24px;
     }
 }
+
+/* Tooltip Styles */
+.tooltip-trigger {
+    position: relative;
+    cursor: help;
+    color: #2d8659;
+    font-weight: 600;
+    vertical-align: super;
+    font-size: 0.8em;
+    text-decoration: none;
+}
+
+.tooltip-text {
+    visibility: hidden;
+    width: 300px;
+    background-color: #2d8659;
+    color: white;
+    text-align: left;
+    border-radius: 8px;
+    padding: 12px;
+    position: absolute;
+    z-index: 1000;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -150px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 14px;
+    line-height: 1.4;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    font-weight: normal;
+    vertical-align: baseline;
+}
+
+.tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #2d8659 transparent transparent transparent;
+}
+
+.tooltip-trigger:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .tooltip-text {
+        width: 250px;
+        margin-left: -125px;
+        font-size: 13px;
+    }
+}
