@@ -70,8 +70,21 @@
     }
     </script>
 
+    <!-- Structured Data - Breadcrumb -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://therassist.ai/" },
+            { "@type": "ListItem", "position": 2, "name": "About Us", "item": "https://therassist.ai/about.html" }
+        ]
+    }
+    </script>
+
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
 </head>
 <body>
     <!-- Header -->
@@ -93,11 +106,11 @@
                     <li><a href="https://calendly.com/therai" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">Request Demo</a></li>
                     <li><a href="contact.html" class="btn btn-primary btn-sm">Get Started</a></li>
                 </ul>
-                <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu" aria-expanded="false">
                     <span></span>
                     <span></span>
                     <span></span>
-                </div>
+                </button>
             </nav>
         </div>
     </header>
@@ -236,7 +249,7 @@
                 </div>
 
                 <div class="feature-card" style="text-align: center; padding: 40px;">
-                    <img src="images/Harned_headshot.jpg" alt="Melanie Harned, PhD" width="1703" height="2572" loading="lazy" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; object-position: center 20%; margin: 0 auto 20px; display: block;">
+                    <img src="images/Harned_headshot.jpg" alt="Melanie Harned, PhD" width="265" height="400" loading="lazy" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; object-position: center 20%; margin: 0 auto 20px; display: block;">
                     <h4 style="font-size: 1.5rem; margin-bottom: 8px;">Melanie Harned, PhD</h4>
                     <p style="color: var(--primary-green); font-weight: 600; margin-bottom: 16px;">Chief Scientific Officer</p>
                     <p style="margin-bottom: 0;">Creator of the DBT Adherence Coding Instrument (AC-I). World-renowned expert in DBT and evidence-based treatments. Research Associate Professor at University of Washington.</p>
@@ -265,7 +278,7 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <div class="logo" style="color: white;">
-                        <svg viewBox="0 0 24 24" style="fill: white;">
+                        <svg aria-hidden="true" viewBox="0 0 24 24" style="fill: white;">
                             <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
                         </svg>
                         Therassist.AI
@@ -303,7 +316,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Therassist, Inc. All rights reserved.</p>
+                <p>&copy; 2026 Therassist, Inc. All rights reserved.</p>
                 <div class="footer-links">
                     <a href="privacy-policy.html">Privacy Policy</a>
                     <a href="terms-of-service.html">Terms of Service</a>

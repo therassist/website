@@ -26,6 +26,18 @@
     <meta name="twitter:description" content="FAQs, documentation, and compliance resources for DBT adherence measurement. HIPAA consent templates and ethics guidance.">
     <meta name="twitter:image" content="https://therassist.ai/images/Logo.png">
 
+    <!-- Structured Data - Breadcrumb -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://therassist.ai/" },
+            { "@type": "ListItem", "position": 2, "name": "Resources", "item": "https://therassist.ai/resources.html" }
+        ]
+    }
+    </script>
+
     <!-- Structured Data - FAQ -->
     <script type="application/ld+json">
     {
@@ -110,32 +122,33 @@
 
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
 </head>
 <body>
     <!-- Header -->
     <header>
         <div class="container">
             <nav>
-                <a class='logo' href='/'>
+                <a class="logo" href="index.html">
                     <svg viewBox="0 0 24 24" role="img" aria-label="Therassist.AI - Quality infrastructure for psychotherapy">
                         <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
                     </svg>
                     Therassist.AI
                 </a>
                 <ul class="nav-links">
-                    <li><a href='/'>Home</a></li>
-                    <li><a href='/product'>Product</a></li>
-                    <li><a href='/pricing'>Pricing</a></li>
-                    <li><a href='/about'>About Us</a></li>
-                    <li><a class='active' href='/resources'>Resources</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="product.html">Product</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a class="active" href="resources.html">Resources</a></li>
                     <li><a href="https://calendly.com/therai" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">Request Demo</a></li>
-                    <li><a class='btn btn-primary btn-sm' href='/contact'>Get Started</a></li>
+                    <li><a class="btn btn-primary btn-sm" href="contact.html">Get Started</a></li>
                 </ul>
-                <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu" aria-expanded="false">
                     <span></span>
                     <span></span>
                     <span></span>
-                </div>
+                </button>
             </nav>
         </div>
     </header>
@@ -155,7 +168,7 @@
             <div class="grid grid-4">
                 <a href="#getting-started" class="feature-card" style="text-align: center; text-decoration: none;">
                     <div class="feature-icon" style="margin: 0 auto 16px;">
-                        <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+                        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
                     </div>
                     <h4>Getting Started</h4>
                     <p style="margin-bottom: 0; font-size: 0.9rem;">Quick setup guide</p>
@@ -163,7 +176,7 @@
 
                 <a href="#faq" class="feature-card" style="text-align: center; text-decoration: none;">
                     <div class="feature-icon" style="margin: 0 auto 16px;">
-                        <svg viewBox="0 0 24 24"><path d="M11 18h2v-2h-2v2zm1-16C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-2.21 0-4 1.79-4 4h2c0-1.1.9-2 2-2s2 .9 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5 0-2.21-1.79-4-4-4z"/></svg>
+                        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M11 18h2v-2h-2v2zm1-16C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-2.21 0-4 1.79-4 4h2c0-1.1.9-2 2-2s2 .9 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5 0-2.21-1.79-4-4-4z"/></svg>
                     </div>
                     <h4>FAQ</h4>
                     <p style="margin-bottom: 0; font-size: 0.9rem;">Common questions</p>
@@ -171,7 +184,7 @@
 
                 <a href="#consent" class="feature-card" style="text-align: center; text-decoration: none;">
                     <div class="feature-icon" style="margin: 0 auto 16px;">
-                        <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+                        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
                     </div>
                     <h4>Consent Forms</h4>
                     <p style="margin-bottom: 0; font-size: 0.9rem;">Sample documents</p>
@@ -179,7 +192,7 @@
 
                 <a href="mailto:support@therassist.ai" class="feature-card" style="text-align: center; text-decoration: none;">
                     <div class="feature-icon" style="margin: 0 auto 16px;">
-                        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
                     </div>
                     <h4>Contact Support</h4>
                     <p style="margin-bottom: 0; font-size: 0.9rem;">Get help</p>
@@ -257,64 +270,64 @@
 
             <div class="faq-list">
                 <div class="faq-item">
-                    <button class="faq-question">How long after I end a session will it take to see the note?</button>
-                    <div class="faq-answer">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-r1">How long after I end a session will it take to see the note?</button>
+                    <div class="faq-answer" id="faq-r1">
                         <p>If you use the zoom recording, usually within 20 minutes and sometimes up to 60 minutes. If you use the in-app transcribe feature, usually nearly immediately after your session.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
-                    <button class="faq-question">What happens to the recording in Zoom?</button>
-                    <div class="faq-answer">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-r2">What happens to the recording in Zoom?</button>
+                    <div class="faq-answer" id="faq-r2">
                         <p>For the in-app transcribe feature, the recording is deleted immediately after the session is transcribed. For zoom it is based on your configurations and up to each practice. We recommend deleting recordings with 24 hours or sooner.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
-                    <button class="faq-question">Do you store any patient data?</button>
-                    <div class="faq-answer">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-r3">Do you store any patient data?</button>
+                    <div class="faq-answer" id="faq-r3">
                         <p>We do not store any patient identifying clinical data. We do store anonymized transcripts to help improve our services.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
-                    <button class="faq-question">Is Therassist HIPAA compliant?</button>
-                    <div class="faq-answer">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-r4">Is Therassist HIPAA compliant?</button>
+                    <div class="faq-answer" id="faq-r4">
                         <p>Yes. Therassist is fully HIPAA compliant. We offer Business Associate Agreements (BAAs) to all customers. We do not store any identifiable patient data. We do store anonymized transcripts (with all personal health information removed) to improve our AI models and services. All data is encrypted in transit and at rest. We use secure authentication, audit logs, monitoring, and other best practices to ensure data privacy and security.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
-                    <button class="faq-question">Can I use Therassist for intake notes?</button>
-                    <div class="faq-answer">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-r5">Can I use Therassist for intake notes?</button>
+                    <div class="faq-answer" id="faq-r5">
                         <p>Yes! Use the Intake Note template available in Pro and Clinic plans.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
-                    <button class="faq-question">Can I use Therassist for in-person sessions?</button>
-                    <div class="faq-answer">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-r6">Can I use Therassist for in-person sessions?</button>
+                    <div class="faq-answer" id="faq-r6">
                         <p>Yes. You can use the in app transcribe feature or Zoom in person.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
-                    <button class="faq-question">What therapeutic modalities does Therassist support?</button>
-                    <div class="faq-answer">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-r7">What therapeutic modalities does Therassist support?</button>
+                    <div class="faq-answer" id="faq-r7">
                         <p>CBT, DBT, ACT, Interpersonal Therapy and other evidence-based therapies.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
-                    <button class="faq-question">How do I get notes into my EHR?</button>
-                    <div class="faq-answer">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-r8">How do I get notes into my EHR?</button>
+                    <div class="faq-answer" id="faq-r8">
                         <p>Therassist provides easy copy-paste workflow support for all EHRs including SimplePractice, TherapyNotes, and Valant. Simply copy your completed note and paste it into your EHR.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
-                    <button class="faq-question">How do I provide feedback or report issues?</button>
-                    <div class="faq-answer">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-r9">How do I provide feedback or report issues?</button>
+                    <div class="faq-answer" id="faq-r9">
                         <p>We welcome your feedback! You can reach us at <a href="mailto:support@therassist.ai" style="color: var(--primary-green);">support@therassist.ai</a> or through periodic surveys we send to users. Your input directly shapes our product development.</p>
                     </div>
                 </div>
@@ -395,7 +408,7 @@
             <h2>Still Have Questions?</h2>
             <p>Our team is here to help you succeed with Therassist.</p>
             <div class="cta-buttons">
-                <a class='btn btn-white btn-lg' href='/contact'>Contact Us</a>
+                <a class="btn btn-white btn-lg" href="contact.html">Contact Us</a>
                 <a href="mailto:support@therassist.ai" class="btn btn-secondary btn-lg" style="border-color: white; color: white;">Email Support</a>
             </div>
         </div>
@@ -409,7 +422,7 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <div class="logo" style="color: white;">
-                        <svg viewBox="0 0 24 24" style="fill: white;">
+                        <svg aria-hidden="true" viewBox="0 0 24 24" style="fill: white;">
                             <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
                         </svg>
                         Therassist.AI
@@ -422,32 +435,32 @@
                 <div class="footer-column">
                     <h4>Product</h4>
                     <ul>
-                        <li><a href='/product'>Features</a></li>
-                        <li><a href='/pricing'>Pricing</a></li>
-                        <li><a href='/product#security'>Security</a></li>
+                        <li><a href="product.html">Features</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="product.html#security">Security</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h4>Company</h4>
                     <ul>
-                        <li><a href='/about'>About Us</a></li>
-                        <li><a href='/about#team'>Team</a></li>
-                        <li><a href='/contact'>Contact</a></li>
-                        <li><a href='/resources'>Resources</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="about.html#team">Team</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="resources.html">Resources</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h4>Support</h4>
                     <ul>
-                        <li><a href='/resources#faq'>FAQ</a></li>
-                        <li><a href='/resources'>Documentation</a></li>
+                        <li><a href="resources.html#faq">FAQ</a></li>
+                        <li><a href="resources.html">Documentation</a></li>
                         <li><a href="support.html">Support</a></li>
-                        <li><a href='/contact'>Schedule Demo</a></li>
+                        <li><a href="contact.html">Schedule Demo</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Therassist, Inc. All rights reserved.</p>
+                <p>&copy; 2026 Therassist, Inc. All rights reserved.</p>
                 <div class="footer-links">
                     <a href="privacy-policy.html">Privacy Policy</a>
                     <a href="terms-of-service.html">Terms of Service</a>
@@ -468,9 +481,13 @@
             button.addEventListener('click', () => {
                 const item = button.parentElement;
                 const isActive = item.classList.contains('active');
-                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+                document.querySelectorAll('.faq-item').forEach(i => {
+                    i.classList.remove('active');
+                    i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                });
                 if (!isActive) {
                     item.classList.add('active');
+                    button.setAttribute('aria-expanded', 'true');
                 }
             });
         });

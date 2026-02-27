@@ -74,6 +74,18 @@
     }
     </script>
 
+    <!-- Structured Data - Breadcrumb -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://therassist.ai/" },
+            { "@type": "ListItem", "position": 2, "name": "Pricing", "item": "https://therassist.ai/pricing.html" }
+        ]
+    }
+    </script>
+
     <!-- Structured Data - FAQ -->
     <script type="application/ld+json">
     {
@@ -134,6 +146,7 @@
 
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
 </head>
 
 <body>
@@ -158,11 +171,11 @@
                     <li><a href="https://calendly.com/therai" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">Request Demo</a></li>
                     <li><a href="contact.html" class="btn btn-primary btn-sm">Start Free Trial</a></li>
                 </ul>
-                <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu" aria-expanded="false">
                     <span></span>
                     <span></span>
                     <span></span>
-                </div>
+                </button>
             </nav>
         </div>
     </header>
@@ -696,8 +709,8 @@
 
             <div class="faq-list">
                 <div class="faq-item">
-                    <button class="faq-question">Can I switch plans at any time?</button>
-                    <div class="faq-answer">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-p1">Can I switch plans at any time?</button>
+                    <div class="faq-answer" id="faq-p1">
                         <p>Yes! You can upgrade or downgrade your plan at any time. When upgrading, you'll get immediate
                             access to new features. When downgrading, changes take effect at the end of your current
                             billing period.</p>
@@ -705,23 +718,23 @@
                 </div>
 
                 <div class="faq-item">
-                    <button class="faq-question">How does the free trial work?</button>
-                    <div class="faq-answer">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-p2">How does the free trial work?</button>
+                    <div class="faq-answer" id="faq-p2">
                         <p>Every plan includes a 14-day free trial with full access to all features. Enter your payment information to start your trial, but you won't be charged until the trial ends. Cancel anytime during the trial period at no cost.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
-                    <button class="faq-question">What happens if I exceed my monthly note limit?</button>
-                    <div class="faq-answer">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-p3">What happens if I exceed my monthly note limit?</button>
+                    <div class="faq-answer" id="faq-p3">
                         <p>If you approach your limit, we'll notify you so you can upgrade if needed. We won't cut off
                             your access mid-month - we'll work with you to find the right solution.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
-                    <button class="faq-question">Do you offer discounts for annual billing?</button>
-                    <div class="faq-answer">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-p4">Do you offer discounts for annual billing?</button>
+                    <div class="faq-answer" id="faq-p4">
                         <p>Yes! Annual billing saves you up to 20% compared to monthly billing. Use the toggle above our
                             pricing cards to see both monthly and annual rates. Solo plan saves $120/year and Pro plan
                             saves $192/year with annual billing.</p>
@@ -729,16 +742,16 @@
                 </div>
 
                 <div class="faq-item">
-                    <button class="faq-question">Is there a Business Associate Agreement (BAA) available?</button>
-                    <div class="faq-answer">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-p5">Is there a Business Associate Agreement (BAA) available?</button>
+                    <div class="faq-answer" id="faq-p5">
                         <p>Absolutely. We provide BAAs for all customers to ensure HIPAA compliance. BAAs are included
                             at no additional cost.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
-                    <button class="faq-question">What payment methods do you accept?</button>
-                    <div class="faq-answer">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-p6">What payment methods do you accept?</button>
+                    <div class="faq-answer" id="faq-p6">
                         <p>We accept all major credit cards (Visa, MasterCard, American Express) through our secure
                             Stripe integration. For Clinic plans, we also offer invoice billing.</p>
                     </div>
@@ -768,7 +781,7 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <div class="logo" style="color: white;">
-                        <svg viewBox="0 0 24 24" style="fill: white;">
+                        <svg aria-hidden="true" viewBox="0 0 24 24" style="fill: white;">
                             <path
                                 d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
                         </svg>
@@ -808,7 +821,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Therassist, Inc. All rights reserved.</p>
+                <p>&copy; 2026 Therassist, Inc. All rights reserved.</p>
                 <div class="footer-links">
                     <a href="privacy-policy.html">Privacy Policy</a>
                     <a href="terms-of-service.html">Terms of Service</a>
@@ -901,11 +914,15 @@
                 const isActive = item.classList.contains('active');
 
                 // Close all items
-                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+                document.querySelectorAll('.faq-item').forEach(i => {
+                    i.classList.remove('active');
+                    i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                });
 
                 // Open clicked item if it wasn't active
                 if (!isActive) {
                     item.classList.add('active');
+                    button.setAttribute('aria-expanded', 'true');
                 }
             });
         });

@@ -203,6 +203,8 @@ nav {
     gap: 5px;
     cursor: pointer;
     padding: 8px;
+    background: none;
+    border: none;
 }
 
 .mobile-menu-toggle span {
@@ -596,8 +598,9 @@ nav {
     text-align: center;
 }
 
-.stat-item h3 {
+.stat-item .stat-number {
     font-size: 3rem;
+    font-weight: 700;
     color: white;
     margin-bottom: 8px;
 }
@@ -673,8 +676,9 @@ nav {
     font-size: 1.125rem;
 }
 
-.author-info h5 {
+.author-info .author-name {
     font-size: 1rem;
+    font-weight: 600;
     color: var(--dark-green);
     margin-bottom: 2px;
 }
@@ -1395,7 +1399,7 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    .stat-item h3 {
+    .stat-item .stat-number {
         font-size: 2.5rem;
     }
 }
