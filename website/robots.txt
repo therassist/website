@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+Disallow: /privacy-old.html
+Disallow: /pricing.html.backup
+Disallow: /.claude/
+Disallow: /.DS_Store
+Disallow: /*.docx$
+Disallow: /*.psd$
+
+Sitemap: https://therassist.ai/sitemap.xml
