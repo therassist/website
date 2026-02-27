@@ -74,6 +74,64 @@
     }
     </script>
 
+    <!-- Structured Data - FAQ -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Can I switch plans at any time?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes! You can upgrade or downgrade your plan at any time. When upgrading, you'll get immediate access to new features. When downgrading, changes take effect at the end of your current billing period."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How does the free trial work?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Every plan includes a 14-day free trial with full access to all features. Enter your payment information to start your trial, but you won't be charged until the trial ends. Cancel anytime during the trial period at no cost."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What happens if I exceed my monthly note limit?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "If you approach your limit, we'll notify you so you can upgrade if needed. We won't cut off your access mid-month - we'll work with you to find the right solution."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do you offer discounts for annual billing?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes! Annual billing saves you up to 20% compared to monthly billing. Solo plan saves $120/year and Pro plan saves $192/year with annual billing."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is there a Business Associate Agreement (BAA) available?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Absolutely. We provide BAAs for all customers to ensure HIPAA compliance. BAAs are included at no additional cost."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What payment methods do you accept?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "We accept all major credit cards (Visa, MasterCard, American Express) through our secure Stripe integration. For Clinic plans, we also offer invoice billing."
+                }
+            }
+        ]
+    }
+    </script>
+
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="favicon.png">
 </head>
@@ -109,6 +167,7 @@
         </div>
     </header>
 
+    <main>
     <!-- Pricing Hero -->
     <section class="section"
         style="background: linear-gradient(135deg, var(--bg-light) 0%, #e8f5e9 100%); padding-top: 60px;">
@@ -700,6 +759,8 @@
             </div>
         </div>
     </section>
+
+    </main>
 
     <!-- Footer -->
     <footer>
