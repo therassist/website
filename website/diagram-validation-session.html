@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="robots" content="noindex, nofollow"/>
+  <title>Validation Session — Data Flow | Therassist</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy:      #0D2B45;
+      --teal:      #1A7F7A;
+      --off-white: #F7F5F1;
+      --border:    #D8E3E7;
+      --muted:     #6B7E8C;
+      --white:     #FFFFFF;
+
+      --green-bg:   #C8EAE4;
+      --green-bdr:  #5CB8A8;
+      --blue-bg:    #C8DCF0;
+      --blue-bdr:   #5A8FC4;
+      --purple-bg:  #DAD5F0;
+      --purple-bdr: #9B8EC4;
+      --gray-bg:    #E8E2D8;
+      --gray-bdr:   #B0A898;
+      --tan-bg:     #F5DFB8;
+      --tan-bdr:    #D4A85A;
+      --side-bg:    #EFEFEF;
+      --side-bdr:   #C0C0C0;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--off-white);
+      color: #1C2B36;
+      min-height: 100vh;
+    }
+
+    header {
+      background: var(--navy);
+      padding: 28px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header a {
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      font-size: 13px;
+      letter-spacing: 0.04em;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
+    }
+    header a:hover { color: rgba(255,255,255,0.9); }
+    header span {
+      color: rgba(255,255,255,0.35);
+      font-size: 13px;
+      letter-spacing: 0.04em;
+    }
+
+    .page-title {
+      max-width: 760px;
+      margin: 48px auto 0;
+      padding: 0 40px;
+      text-align: center;
+    }
+    .page-title h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 28px;
+      font-weight: 400;
+      color: var(--navy);
+      letter-spacing: -0.01em;
+    }
+    .page-title p {
+      margin-top: 8px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .diagram-wrap {
+      max-width: 760px;
+      margin: 40px auto 64px;
+      padding: 0 24px;
+    }
+
+    .diagram {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 48px 40px 40px;
+    }
+
+    /* box styles */
+    .box {
+      border-radius: 8px;
+      padding: 14px 18px;
+      text-align: center;
+      border: 1.5px solid transparent;
+    }
+    .box .label { font-weight: 600; font-size: 14px; line-height: 1.3; }
+    .box .sub   { font-size: 12.5px; color: #555; margin-top: 4px; line-height: 1.4; }
+
+    .green-box  { background: var(--green-bg);  border-color: var(--green-bdr); }
+    .blue-box   { background: var(--blue-bg);   border-color: var(--blue-bdr); }
+    .purple-box { background: var(--purple-bg); border-color: var(--purple-bdr); }
+    .gray-box   { background: var(--gray-bg);   border-color: var(--gray-bdr); }
+    .tan-box    { background: var(--tan-bg);    border-color: var(--tan-bdr); }
+    .side-box   { background: var(--side-bg);   border-color: var(--side-bdr); font-size: 12.5px; color: #555; }
+
+    /* single column layout */
+    .flow {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+      padding: 0 80px;
+    }
+
+    .flow-row {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .flow-row .main { flex: 1; }
+    .dashed-line {
+      width: 24px;
+      flex-shrink: 0;
+      border-top: 1.5px dashed #AAA;
+    }
+    .side-note {
+      width: 156px;
+      flex-shrink: 0;
+      text-align: center;
+      padding: 10px 12px;
+    }
+
+    /* arrow */
+    .arrow-down {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 5px 0;
+    }
+    .arrow-down::before { content: ''; width: 1.5px; height: 22px; background: #888; }
+    .arrow-down::after  { content: ''; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 7px solid #888; }
+
+    /* split section */
+    .split-section {
+      width: 100%;
+      padding: 0 80px;
+    }
+
+    /* fork lines */
+    .fork-bar {
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      height: 1.5px;
+      background: #888;
+      margin: 0 16% 0;
+    }
+    .fork-drop-left,
+    .fork-drop-right {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .fork-drop-left::before,
+    .fork-drop-right::before {
+      content: ''; width: 1.5px; height: 18px; background: #888;
+    }
+    .fork-drop-left::after,
+    .fork-drop-right::after {
+      content: '';
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 7px solid #888;
+    }
+
+    .fork-drops {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .two-col-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .split-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+
+    /* dashed down arrow for side note */
+    .dashed-arrow-down {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 5px 0;
+    }
+    .dashed-arrow-down::before { content: ''; width: 0; height: 18px; border-left: 1.5px dashed #AAA; }
+    .dashed-arrow-down::after  { content: ''; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 7px solid #AAA; }
+
+    /* legend */
+    .legend {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px 28px;
+      margin-top: 32px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      font-size: 12.5px;
+      color: var(--muted);
+    }
+    .legend-item { display: flex; align-items: center; gap: 10px; }
+    .legend-dashed { width: 28px; border-top: 1.5px dashed #AAA; }
+    .legend-solid  {
+      width: 20px; height: 0; border-top: 1.5px solid #888;
+      position: relative;
+    }
+    .legend-solid::after {
+      content: '';
+      position: absolute;
+      right: -1px; top: -4px;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 6px solid #888;
+      transform: rotate(90deg) translateX(-1px);
+    }
+    .legend-split {
+      width: 28px; height: 0; border-top: 1.5px solid #888;
+    }
+
+    @media (max-width: 600px) {
+      .flow { padding: 0 8px; }
+      .split-section { padding: 0 8px; }
+      .fork-bar { margin: 0 5%; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="FAQ-Founding_Partner_Program.html">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+    Back to FAQ
+  </a>
+  <span>Therassist · Founding Partner Program</span>
+</header>
+
+<div class="page-title">
+  <h1>Validation Session — Data Flow</h1>
+  <p>How session data is handled when a clinician submits a session for expert DBT AC-I rating</p>
+</div>
+
+<div class="diagram-wrap">
+  <div class="diagram">
+
+    <!-- Single column upper flow -->
+    <div class="flow">
+
+      <div class="flow-row">
+        <div class="main box green-box">
+          <div class="label">Session recorded + submitted for validation</div>
+          <div class="sub">In-app audio, or video uploaded from computer</div>
+        </div>
+      </div>
+
+      <div class="arrow-down"></div>
+
+      <div class="flow-row">
+        <div class="main box blue-box">
+          <div class="label">Recording moved to secure storage</div>
+          <div class="sub">HIPAA-compliant, expert raters only</div>
+        </div>
+        <div class="dashed-line"></div>
+        <div class="side-note box side-box">
+          No Therassist staff<br>access
+        </div>
+      </div>
+
+      <div class="arrow-down"></div>
+
+      <div class="flow-row">
+        <div class="main box purple-box">
+          <div class="label">Expert human rater scores session</div>
+          <div class="sub">DBT AC-I adherence coding, Dr. Harned's team</div>
+        </div>
+      </div>
+
+      <div class="arrow-down"></div>
+
+      <div class="flow-row">
+        <div class="main box gray-box">
+          <div class="label">Recording permanently deleted</div>
+          <div class="sub">Immediately on rating completion</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Fork / split -->
+    <div class="split-section">
+      <div style="display:flex;flex-direction:column;align-items:center;">
+        <div style="width:1.5px;height:22px;background:#888;"></div>
+      </div>
+      <div class="fork-bar"></div>
+      <div class="fork-drops">
+        <div class="fork-drop-left"></div>
+        <div class="fork-drop-right"></div>
+      </div>
+
+      <!-- Two columns after split -->
+      <div class="two-col-split">
+
+        <!-- LEFT: adherence report -->
+        <div class="split-col">
+          <div class="box green-box" style="width:100%;">
+            <div class="label">Adherence report sent</div>
+            <div class="sub">Emailed directly to clinician</div>
+          </div>
+          <div class="arrow-down"></div>
+          <div class="box gray-box" style="width:100%;">
+            <div class="label">Practice may de-identify report</div>
+            <div class="sub">Disassociate clinician from rating</div>
+          </div>
+        </div>
+
+        <!-- RIGHT: validation data -->
+        <div class="split-col">
+          <div class="box tan-box" style="width:100%;">
+            <div class="label">Data used for validation and improvement of the DBT AC-I</div>
+            <div class="sub">De-id transcript + AI + expert ratings</div>
+          </div>
+          <div class="arrow-down"></div>
+          <div class="box tan-box" style="width:100%;">
+            <div class="label">Data handling and retention</div>
+            <div class="sub">Follows research standards</div>
+          </div>
+          <div class="dashed-arrow-down"></div>
+          <div class="box side-box" style="width:100%;text-align:center;font-size:12.5px;color:#555;padding:10px 12px;">
+            Used only to validate + improve<br>AI DBT AC-I — no other purpose
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Legend -->
+    <div class="legend">
+      <div class="legend-item">
+        <div class="legend-dashed"></div>
+        Side note / annotation
+      </div>
+      <div class="legend-item">
+        <div class="legend-solid"></div>
+        Data flow
+      </div>
+      <div class="legend-item">
+        <div class="legend-split"></div>
+        Flow splits into two outputs
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
