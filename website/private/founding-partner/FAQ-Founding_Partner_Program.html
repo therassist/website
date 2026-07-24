@@ -289,11 +289,16 @@
   <div class="header-inner">
     <div class="badge">Founding Partner Program</div>
     <h1>Frequently Asked<br>Questions</h1>
-    <div class="header-meta">March 24, 2026 &nbsp;·&nbsp; Therassist</div>
+    <div class="header-meta">July 24, 2026 &nbsp;·&nbsp; Therassist</div>
   </div>
 </header>
 
 <main>
+
+  <div class="callout" style="margin-bottom:32px;">
+    <strong>Therassist is not a system of record</strong>
+    Therassist has no concept of a patient chart. There is no patient record to create, maintain, or reconcile against your EHR, and no patient-identifiable data is held once a session is finalized. Notes are drafted for the clinician to review and then moved into your own record system. The answers below describe what happens to session data along the way.
+  </div>
 
   <!-- ── SECTION 1: Recordings ── -->
   <div class="section-heading">
@@ -338,7 +343,7 @@
         <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
       </summary>
       <div class="answer">
-        Recordings submitted as part of the project to validate the AI DBT AC-I are retained until the human raters have completed their review and coding. Once that process is complete, the recording is permanently deleted.
+        Recordings submitted as part of the project to validate the AI DBT AC-I are held in encrypted storage only for the processing window the expert human rating requires — typically within seven days, and in no event longer than fourteen. Once the rating is complete, the recording is permanently deleted.
       </div>
     </details>
 
@@ -358,11 +363,13 @@
         <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
       </summary>
       <div class="answer">
-        <p>For all sessions, transcripts are immediately de-identified. All protected health information is removed. Therassist applies HIPAA Safe Harbor de-identification, removing all 18 categories of protected health information before any transcript is used or stored.</p>
+        <p>For all sessions, transcripts are de-identified immediately upon ingestion, before anything is written to the database or sent to any AI model. Patient identifiers are removed by an automated pipeline, and the original transcript is deleted. The pipeline is designed to fail closed: if the de-identification service is unavailable, ingestion fails rather than allowing identified data through.</p>
+        <br>
+        <p>Our de-identification methodology has been reviewed by an independent HIPAA expert under the Expert Determination method of 45 CFR 164.514(b)(1), who determined that it meets the very small risk standard the regulation requires.</p>
         <br>
         <p>For <strong>routine sessions</strong>, de-identified transcripts are deleted when the clinician generates a note or scorecard and deletes the session, or within 72 hours — whichever occurs first.</p>
         <br>
-        <p>For <strong>validation sessions</strong>, de-identified transcripts are used to help improve the AI DBT AC-I. This data will be kept in accordance with research standards for data handling and retention (3 years after validation is complete).</p>
+        <p>For <strong>validation sessions</strong>, de-identified transcripts are used to help improve the AI DBT AC-I. This data is kept in accordance with research standards for data handling and retention.</p>
       </div>
     </details>
 
@@ -401,9 +408,9 @@
         <ol class="steps">
           <li><div><strong>Recording:</strong> Sessions are recorded either through Zoom or the in-app record-and-transcribe feature. Both work for in-person and telehealth sessions.</div></li>
           <li><div><strong>Transcription:</strong> With Zoom, a transcript is created in Zoom and ingested by Therassist. The Zoom recording itself is never ingested — it stays in your practice's Zoom account and is deleted according to your Zoom configuration (we recommend within 24 hours). With the in-app feature, the audio recording is deleted automatically as soon as the transcript is created.</div></li>
-          <li><div><strong>De-identification:</strong> Transcripts are de-identified immediately. All protected health information is removed. The original transcript is deleted.</div></li>
+          <li><div><strong>De-identification:</strong> Transcripts are de-identified immediately upon ingestion, under a methodology reviewed by an independent HIPAA expert under 45 CFR 164.514(b)(1). The original transcript is deleted.</div></li>
           <li><div><strong>Note and scorecard generation:</strong> The de-identified transcript is used to generate a session note and/or an AI DBT AC-I scorecard. Recordings are never input into the AI — only de-identified transcripts are used.</div></li>
-          <li><div><strong>Deletion:</strong> The de-identified transcript is deleted when the clinician finalizes and deletes the session, or within 72 hours, whichever comes first. Scorecards are deleted unless the practice chooses to retain them to track clinician progress over time.</div></li>
+          <li><div><strong>Deletion:</strong> The de-identified transcript is deleted when the clinician finalizes and deletes the session, or within 72 hours, whichever comes first. Once it is deleted, Therassist holds no data from the session that could identify a patient. Adherence scorecards persist — they contain no patient identifiers, are associated with the clinician rather than the patient, and are retained so that progress can be tracked over time.</div></li>
         </ol>
         <a href="diagram-routine-session.html" style="display:inline-flex;align-items:center;gap:8px;margin-top:12px;font-size:13.5px;font-weight:500;color:var(--teal);text-decoration:none;border:1px solid var(--teal);padding:8px 14px;border-radius:4px;transition:background 0.15s;" onmouseover="this.style.background='var(--teal-lt)'" onmouseout="this.style.background='transparent'">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
@@ -423,9 +430,9 @@
         <ol class="steps">
           <li><div><strong>Recording and upload:</strong> The clinician uses the in-app record-and-transcribe feature to create an audio recording, or uploads a video recording from their computer, and selects the option to submit for validation.</div></li>
           <li><div><strong>Secure storage:</strong> The recording is moved to a secure, HIPAA-compliant storage area accessible only to the expert raters on Dr. Harned's quality team.</div></li>
-          <li><div><strong>Expert rating:</strong> A human expert rates the session using the DBT AC-I. As soon as the rating is complete, the recording is permanently deleted.</div></li>
+          <li><div><strong>Expert rating:</strong> A human expert rates the session using the DBT AC-I — typically within seven days, and in no event longer than fourteen. As soon as the rating is complete, the recording is permanently deleted.</div></li>
           <li><div><strong>Adherence feedback report:</strong> The adherence feedback report is sent automatically to the clinician by email. It is up to the practice whether to disassociate the clinician's identity from the rating.</div></li>
-          <li><div><strong>Data retention:</strong> The expert rating, de-identified transcript, and AI DBT AC-I rating are used to validate and improve the AI DBT AC-I. This data is retained in accordance with research data standards (3 years after validation is complete).</div></li>
+          <li><div><strong>Data retention:</strong> The expert rating, de-identified transcript, and AI DBT AC-I rating are used to validate and improve the AI DBT AC-I. This data is retained in accordance with research data standards.</div></li>
         </ol>
         <a href="diagram-validation-session.html" style="display:inline-flex;align-items:center;gap:8px;margin-top:12px;font-size:13.5px;font-weight:500;color:var(--teal);text-decoration:none;border:1px solid var(--teal);padding:8px 14px;border-radius:4px;transition:background 0.15s;" onmouseover="this.style.background='var(--teal-lt)'" onmouseout="this.style.background='transparent'">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
