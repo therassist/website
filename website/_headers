@@ -4,3 +4,14 @@
   X-Robots-Tag: noindex, nofollow
 /diagram-validation-session.html
   X-Robots-Tag: noindex, nofollow
+
+/clinical-partner/FAQ-Clinical_Partner_Program.html
+  X-Robots-Tag: noindex, nofollow
+/clinical-partner/diagram-routine-session.html
+  X-Robots-Tag: noindex, nofollow
+/private/clinical-partner/FAQ-Clinical_Partner_Program.html
+  X-Robots-Tag: noindex, nofollow
+/private/clinical-partner/diagram-routine-session.html
+  X-Robots-Tag: noindex, nofollow
+/private/founding-partner/*
+  X-Robots-Tag: noindex, nofollow

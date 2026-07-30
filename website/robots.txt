@@ -4,6 +4,8 @@ Allow: /
 Disallow: /privacy-old.html
 Disallow: /pricing.html.backup
 Disallow: /.claude/
+Disallow: /private/
+Disallow: /clinical-partner/
 Disallow: /.DS_Store
 Disallow: /*.docx$
 Disallow: /*.psd$
