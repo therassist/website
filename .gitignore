@@ -1,7 +1,6 @@
-# Ignore everything except website and evi-ai-demo folders
+# Ignore everything except the website folder
 /*
 !/website/
-!/evi-ai-demo/
 !.gitignore
 
 # Local Netlify folder
